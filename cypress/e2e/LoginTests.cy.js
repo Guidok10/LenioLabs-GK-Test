@@ -38,5 +38,12 @@ describe('Login Tests', () => {
     cy.url().should('eq','https://the-internet.herokuapp.com/login')
   })
 
-
+  it('Sign in with registered user but invalid password should give me an error message', () => {
+    cy.get('#username').type('tomsmith')
+    cy.get('#password').type('wrongpassword')
+    cy.get('[type="submit"]').should('be.visible')
+    cy.get('[type="submit"]').click()
+    cy.get('#flash').should('contain','Your password is invalid!') // Please note that giving the information that the username is valid might be a security breach
+    cy.get('#flash').invoke('css', 'background-color').should('equal', 'rgb(198, 15, 19)')
+  })
 })
