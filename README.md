@@ -1,6 +1,9 @@
 # LenioLabs-GK-Test
 Tests written on Cypress
 
+## Test file location
+The test file can be found in the directory '\LenioLabs-GK-Test\cypress\e2e'
+
 ## How to run tests
 
 ### Prerequisite
